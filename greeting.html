@@ -28,17 +28,24 @@
        );
 
        class YourName extends React.Component {
+
+         constructor(props) {
+           super(props);
+           this.state = {date: new Date()};
+         }
+
          render() {
            return (
              <div>
-                <h2>Name</h2>
+                <h2>You are here, {this.props.name}!</h2>
+                <h3>{this.state.date.toLocaleTimeString()}</h3>
              </div>
            );
          }
        }
 
        ReactDOM.render (
-         <YourName />, document.getElementById("different")
+         <YourName name="Queen Pink"/>, document.getElementById("different")
        );
 
     </script>
